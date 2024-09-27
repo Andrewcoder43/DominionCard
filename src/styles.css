@@ -1,0 +1,259 @@
+.price-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+.card-price-overlay {
+    position: absolute;
+    left: 29px;
+    bottom: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coin-image {
+    width: 22px;
+    height: 22px;
+}
+
+.price-text {
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+}
+
+
+
+
+
+/* Layout */
+.dcgenerator-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.input-section {
+    flex: 1;
+    max-width: 50%;
+}
+
+.preview-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Input Fields */
+.title,
+.description-title,
+.illustration-title,
+.type-title {
+    margin: 20px 0 10px;
+    font-size: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+.text-input,
+.description-input,
+.additional-text-input,
+.illustration-input,
+.type-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.description-input {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.type-input {
+    padding: 8px;
+}
+
+.type-input::placeholder {
+    color: #999;
+}
+
+/* Illustration Input */
+.illustration-input-container {
+    position: relative;
+    width: 120%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.illustration-input {
+    padding-right: 40px;
+    /* Make room for the camera icon */
+}
+
+
+.camera-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.camera-icon input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+#image-upload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.card-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+}
+
+.card-image {
+    width: 100%;
+    display: block;
+    position: relative;
+}
+
+/* Card Overlays */
+.card-title-overlay,
+.card-description-overlay,
+.card-type-overlay {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 80%;
+    max-width: 240px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.card-title-overlay {
+    top: 28px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-shadow: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-description-overlay {
+    bottom: 120px;
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 5px;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    max-height: 40%;
+    overflow-y: auto;
+}
+
+.card-type-overlay {
+    bottom: 40px;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.primary-color-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white;
+}
+
+.card-primary-color-overlay {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+
+/* Uploaded Image Container */
+.uploaded-image-container {
+    position: absolute;
+    top: 13%;
+    /* Adjust this value to align with the square area */
+    left: 10%;
+    /* Adjust this value to align with the square area */
+    width: 83%;
+    /* Adjust to fit the square area */
+    height: 46%;
+    /* Adjust to fit the square area */
+    overflow: hidden;
+}
+
+.uploaded-image {
+    width: 97%;
+    height: 84%;
+    object-fit: fill;
+    /* This will ensure the image covers the area while maintaining aspect ratio */
+}
+
+
+
+
+/* Download Button */
+.download-button {
+    display: flex;
+    align-items: center;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}
+
+.download-icon {
+    margin-right: 8px;
+}
+
