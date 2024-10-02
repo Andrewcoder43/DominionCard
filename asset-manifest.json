@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/DominionCard/static/css/main.7ea19472.css",
+    "main.js": "/DominionCard/static/js/main.310b8045.js",
+    "static/js/453.aa47bccc.chunk.js": "/DominionCard/static/js/453.aa47bccc.chunk.js",
+    "index.html": "/DominionCard/index.html",
+    "main.7ea19472.css.map": "/DominionCard/static/css/main.7ea19472.css.map",
+    "main.310b8045.js.map": "/DominionCard/static/js/main.310b8045.js.map",
+    "453.aa47bccc.chunk.js.map": "/DominionCard/static/js/453.aa47bccc.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7ea19472.css",
+    "static/js/main.310b8045.js"
+  ]
+}
