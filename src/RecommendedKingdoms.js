@@ -1,5 +1,4 @@
 import React from 'react';
-import './RecommendedKingdoms.css';
 
 const allCards = [
     { id: 27, name: 'Amulet', expansion: 'Adventures', cardgamename: 'GENTLE INTRO', image: `${process.env.PUBLIC_URL}/Adventures/Amulet.png` },

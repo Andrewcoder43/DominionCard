@@ -4,7 +4,6 @@ import Randomizer from './Randomizer';
 import RulesPage from './RulesPage';
 import CardPage from './CardPage'; // Import the new CardPage component
 import DCgenerator from './DCgenerator'; // Import the new DCgenerator component
-import RecommendedKingdoms from './RecommendedKingdoms';
 import './App.css';
 
 const App = () => {
@@ -16,11 +15,6 @@ const App = () => {
                         <li>
                             <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>
                                 Dominion Randomizer
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to="/recommended-kingdom" className={({ isActive }) => (isActive ? 'active' : '')}>
-                                Recommended Kingdom
                             </NavLink>
                         </li>
                         <li>
@@ -43,7 +37,6 @@ const App = () => {
 
                 <Routes>
                     <Route path="/" element={<Randomizer />} />
-                    <Route path="/recommended-kingdom" element={<RecommendedKingdoms />} />
                     <Route path="/rules" element={<RulesPage />} />
                     <Route path="/cards" element={<CardPage />} />
                     <Route path="/dc-generator" element={<DCgenerator />} /> {/* New route for DCgenerator */}

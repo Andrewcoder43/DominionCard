@@ -493,77 +493,82 @@ const Randomizer = () => {
         { id: 487, name: 'werewolf', expansion: 'Nocturne', image: `${process.env.PUBLIC_URL}/Nocturne/KC/Werewolf.png` },
 
 
-        
+
     ]
 
 
-const [selectedCards, setSelectedCards] = useState(cardOptions.slice(0, 10)); // Initial 10 cards
-const [includeBaseSet, setIncludeBaseSet] = useState(false);
-const [includeAdventures, setIncludeAdventures] = useState(false);
-const [includeAlchemy, setIncludeAlchemy] = useState(false);
-const [includeAllies, setIncludeAllies] = useState(false);
-const [includeCornucopia, setIncludeCornucopia] = useState(false);
-const [includeCustom, setIncludeCustom] = useState(false);
-const [includeDarkAges, setIncludeDarkAges] = useState(false);
-const [includeEmpires, setIncludeEmpires] = useState(false);
-const [includeGuilds, setIncludeGuilds] = useState(false);
-const [includeHinterlands, setIncludeHinterlands] = useState(false);
-const [includeIntrigue, setIncludeIntrigue] = useState(false);
-const [includeMenagerie, setIncludeMenagerie] = useState(false);
-const [includeNocturne, setIncludeNocturne] = useState(false);
-const [includePlunder, setIncludePlunder] = useState(false);
-const [includePromos, setIncludePromos] = useState(false);
-const [includeProsperity, setIncludeProsperity] = useState(false);
-const [includeRenaissance, setIncludeRenaissance] = useState(false);
-const [includeSeaside, setIncludeSeaside] = useState(false);
+    const [selectedCards, setSelectedCards] = useState(cardOptions.slice(0, 10)); // Initial 10 cards
+    const [includeBaseSet, setIncludeBaseSet] = useState(false);
+    const [includeAdventures, setIncludeAdventures] = useState(false);
+    const [includeAlchemy, setIncludeAlchemy] = useState(false);
+    const [includeAllies, setIncludeAllies] = useState(false);
+    const [includeCornucopia, setIncludeCornucopia] = useState(false);
+    const [includeCustom, setIncludeCustom] = useState(false);
+    const [includeDarkAges, setIncludeDarkAges] = useState(false);
+    const [includeEmpires, setIncludeEmpires] = useState(false);
+    const [includeGuilds, setIncludeGuilds] = useState(false);
+    const [includeHinterlands, setIncludeHinterlands] = useState(false);
+    const [includeIntrigue, setIncludeIntrigue] = useState(false);
+    const [includeMenagerie, setIncludeMenagerie] = useState(false);
+    const [includeNocturne, setIncludeNocturne] = useState(false);
+    const [includePlunder, setIncludePlunder] = useState(false);
+    const [includePromos, setIncludePromos] = useState(false);
+    const [includeProsperity, setIncludeProsperity] = useState(false);
+    const [includeRenaissance, setIncludeRenaissance] = useState(false);
+    const [includeSeaside, setIncludeSeaside] = useState(false);
 
-const randomizeCards = () => {
-    // Check if any expansion is selected
-    const anyExpansionSelected = 
-        includeBaseSet || includeAdventures || includeAlchemy || includeAllies ||
-        includeCornucopia || includeCustom || includeDarkAges || includeEmpires ||
-        includeGuilds || includeHinterlands || includeIntrigue || includeMenagerie ||
-        includeNocturne || includePlunder || includePromos || includeProsperity ||
-        includeRenaissance || includeSeaside;
+    const randomizeCards = () => {
+        // Check if any expansion is selected
+        const anyExpansionSelected =
+            includeBaseSet || includeAdventures || includeAlchemy || includeAllies ||
+            includeCornucopia || includeCustom || includeDarkAges || includeEmpires ||
+            includeGuilds || includeHinterlands || includeIntrigue || includeMenagerie ||
+            includeNocturne || includePlunder || includePromos || includeProsperity ||
+            includeRenaissance || includeSeaside;
 
-    // If no expansion is selected, return early without changing the cards
-    if (!anyExpansionSelected) {
-        // Optionally, you can show an alert or message to the user
-        alert("Please select at least one expansion before randomizing cards.");
-        return;
-    }
+        // If no expansion is selected, return early without changing the cards
+        if (!anyExpansionSelected) {
+            // Optionally, you can show an alert or message to the user
+            alert("Please select at least one expansion before randomizing cards.");
+            return;
+        }
 
-    // The rest of your existing code
-    const filteredCards = cardOptions.filter(card =>
-        (includeBaseSet && card.expansion === 'Base Set') ||
-        (includeAdventures && card.expansion === 'Adventures') ||
-        (includeAlchemy && card.expansion === 'Alchemy') ||
-        (includeAllies && card.expansion === 'Allies') ||
-        (includeCornucopia && card.expansion === 'Cornucopia') ||
-        (includeCustom && card.expansion === 'Custom') ||
-        (includeDarkAges && card.expansion === 'Dark Ages') ||
-        (includeEmpires && card.expansion === 'Empires') ||
-        (includeGuilds && card.expansion === 'Guilds') ||
-        (includeHinterlands && card.expansion === 'Hinterlands') ||
-        (includeIntrigue && card.expansion === 'Intrigue') ||
-        (includeMenagerie && card.expansion === 'Menagerie') ||
-        (includeNocturne && card.expansion === 'Nocturne') ||
-        (includePlunder && card.expansion === 'Plunder') ||
-        (includePromos && card.expansion === 'Promos') ||
-        (includeProsperity && card.expansion === 'Prosperity') ||
-        (includeRenaissance && card.expansion === 'Renaissance') ||
-        (includeSeaside && card.expansion === 'Seaside')
-    );
+        // The rest of your existing code
+        const filteredCards = cardOptions.filter(card =>
+            (includeBaseSet && card.expansion === 'Base Set') ||
+            (includeAdventures && card.expansion === 'Adventures') ||
+            (includeAlchemy && card.expansion === 'Alchemy') ||
+            (includeAllies && card.expansion === 'Allies') ||
+            (includeCornucopia && card.expansion === 'Cornucopia') ||
+            (includeCustom && card.expansion === 'Custom') ||
+            (includeDarkAges && card.expansion === 'Dark Ages') ||
+            (includeEmpires && card.expansion === 'Empires') ||
+            (includeGuilds && card.expansion === 'Guilds') ||
+            (includeHinterlands && card.expansion === 'Hinterlands') ||
+            (includeIntrigue && card.expansion === 'Intrigue') ||
+            (includeMenagerie && card.expansion === 'Menagerie') ||
+            (includeNocturne && card.expansion === 'Nocturne') ||
+            (includePlunder && card.expansion === 'Plunder') ||
+            (includePromos && card.expansion === 'Promos') ||
+            (includeProsperity && card.expansion === 'Prosperity') ||
+            (includeRenaissance && card.expansion === 'Renaissance') ||
+            (includeSeaside && card.expansion === 'Seaside')
+        );
 
-    const shuffled = filteredCards.sort(() => Math.random() - 0.5);
-    const selected = shuffled.slice(0, 10); // Select 10 cards
-    setSelectedCards(selected);
-};
+        const shuffled = filteredCards.sort(() => Math.random() - 0.5);
+        const selected = shuffled.slice(0, 10); // Select 10 cards
+        setSelectedCards(selected);
+    };
 
     return (
         <div className="container">
             <h1>Dominion Randomizer</h1>
-            <button className="blue-button" onClick={randomizeCards}>Randomize Cards</button>
+            <button
+                className="dominion-button"
+                onClick={randomizeCards}
+            >
+                Randomize Cards
+            </button>
             <div className="card-section">
                 <div className="card-container">
                     {selectedCards.map((card) => (
@@ -573,7 +578,7 @@ const randomizeCards = () => {
                     ))}
                 </div>
                 <div className="checkbox-container">
-                <h2>Sets</h2>
+                    <h2>Sets</h2>
                     <hr className="divider" /> {/* Horizontal line added here */}
                     <label>
                         <input

@@ -6,9 +6,7 @@
 }
 
 body {
-    background: #FFDD00; /* Solar yellow */
-    background: -webkit-linear-gradient(to right, #FFDD00, #FF5733); /* Gradient from yellow to orange */
-    background: linear-gradient(to right, #FFDD00, #FF5733); /* Gradient from yellow to orange */
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,58 +15,107 @@ body {
     margin: 0;
 }
 
-.poke-container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: space-between;
-    justify-content: center;
-    margin: 0 auto;
-    max-width: 1200px;
-}
-
-.pokemon {
-    background-color: #FFECB3; /* Light yellow */
-    border-radius: 20px;
-    box-shadow: 0 3px 15px rgba(255, 165, 0, 0.5); /* Orange shadow */
-    margin: 10px;
+.rules-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
     padding: 20px;
-    text-align: center;
 }
 
-.pokemon .img-container {
-    width: 120px;
-    height: 120px;
-    text-align: center;
+.rule-card {
+    width: 100%;
 }
 
-.pokemon .img-container img {
-    margin-top: 20px;
-    max-width: 90%;
+.rule-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
-.pokemon .info {
-    margin-top: 20px;
+
+
+.recommended-kingdoms {
+    padding: 20px;
 }
 
-.pokemon .number {
-    background-color: rgba(255, 87, 51, 0.1); /* Transparent orange */
-    border-radius: 10px;
-    font-size: 0.8em;
-    padding: 5px 10px;
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    /* Adjust this value as needed */
+    margin: 0;
+    /* Remove margin */
 }
 
-.pokemon .name {
-    margin: 15px 0 7px;
-    letter-spacing: 1px;
+h2 {
+    margin: 10px 0;
+    /* Reduce margin around headers */
 }
 
-.pokemon-list {
+hr {
+    margin: 10px 0;
+    /* Reduce margin around horizontal rules */
+}
+
+.card {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    padding: 10px;
+    /* Optional: Add padding inside cards */
 }
 
-.pokemon-card {
-    margin: 10px;
-    text-align: center;
+
+.centered-nav {
+    background-color: #f8f9fa;
+    padding: 10px 0;
 }
+
+.centered-nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.centered-nav li {
+    margin: 0 15px;
+}
+
+.centered-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.centered-nav a.active {
+    color: #007bff;
+}
+
+h1 {
+    text-align: center;
+    /* Centers the text horizontally */
+}
+
+
+
+.dominion-button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff; /* Light gold text color */
+    background-color: #0f4ec4; /* Deep red background */
+    border: 2px solid #d4af37; /* Gold border */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .dominion-button:hover {
+    background-color: #6b1515; /* Lighter red on hover */
+    box-shadow: 0 0 10px #d4af37; /* Gold glow effect */
+  }
