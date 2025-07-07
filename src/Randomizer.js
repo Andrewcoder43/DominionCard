@@ -725,36 +725,6 @@ const Randomizer = () => {
                         Seaside (2nd Edition)
                     </label>
                     {/* New section for additional options */}
-                    <h2>Options</h2>
-                    <hr className="divider" /> {/* Divider for the options section */}
-                    <label>
-                        <input type="checkbox" />
-                        Require +2 Action
-                    </label>
-                    <label>
-                        <input type="checkbox" />
-                        Require Drawer
-                    </label>
-                    <label>
-                        <input type="checkbox" />
-                        Require Buy
-                    </label>
-                    <label>
-                        <input type="checkbox" />
-                        Allow Attacks
-                    </label>
-                    <label>
-                        <input type="checkbox" />
-                        Require Reaction
-                    </label>
-                    <label>
-                        <input type="checkbox" />
-                        Require Trashing
-                    </label>
-                    <label>
-                        <input type="checkbox" />
-                        Distribute Cost
-                    </label>
                 </div>
             </div>
         </div>

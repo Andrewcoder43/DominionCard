@@ -3,35 +3,22 @@ import './styles.css';
 import ImageControls from './ImageControls';
 import html2canvas from 'html2canvas';
 
-const colorMap = {
-    'Act/Event': '#FFA500', 'Treasure': '#FFD700', 'Victory': '#90EE90',
-    'Reaction': '#87CEFA', 'Duration': '#FFA07A', 'Reserve': '#DDA0DD',
-    'Shelter': '#F0E68C', 'Curse': '#800080', 'Ruins': '#A52A2A',
-    'Landmark': '#20B2AA', 'Night': '#191970', 'Boon': '#98FB98',
-    'Hex': '#FF69B4', 'State': '#CD853F', 'Artifact': '#B8860B',
-    'Project': '#4682B4', 'Way': '#D2691E', 'Ally': '#7B68EE',
-    'Trait': '#556B2F'
-};
+
 
 const TitleInput = () => {
+    // State declarations
     const [illustrationUrl, setIllustrationUrl] = useState('');
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [type, setType] = useState('');
     const [price, setPrice] = useState('');
-    const [primaryColor, setPrimaryColor] = useState('');
     const [imageStyle, setImageStyle] = useState({});
-    const [cardBackgroundColor, setCardBackgroundColor] = useState('white');
+    const [selectedCardType, setSelectedCardType] = useState('');
 
 
+    // Refs
     const canvasRef = useRef(null);
     const cardTemplateRef = useRef(null);
-
-    const primaryColorOptions = [
-        'Act/Event', 'Treasure', 'Victory', 'Reaction', 'Duration', 'Reserve',
-        'Shelter', 'Curse', 'Ruins', 'Landmark', 'Night', 'Boon', 'Hex',
-        'State', 'Artifact', 'Project', 'Way', 'Ally', 'Trait'
-    ];
 
     const generateCard = useCallback(() => {
         const canvas = canvasRef.current;
@@ -40,13 +27,6 @@ const TitleInput = () => {
         const ctx = canvas.getContext('2d');
         canvas.width = cardTemplateRef.current.width;
         canvas.height = cardTemplateRef.current.height;
-
-        // Draw the base card image
-        ctx.drawImage(cardTemplateRef.current, 0, 0);
-
-        // Apply primary color as background
-        ctx.fillStyle = cardBackgroundColor;
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         // Draw illustration
         if (illustrationUrl) {
@@ -63,18 +43,12 @@ const TitleInput = () => {
         } else {
             drawTextAndFinalize(ctx, canvas);
         }
-    }, [illustrationUrl, cardBackgroundColor, title, description, type, price]);
+    }, [illustrationUrl, title, description, type, price]);
+
 
     useEffect(() => {
-        if (primaryColor) {
-            setCardBackgroundColor(colorMap[primaryColor] || 'white');
-        } else {
-            setCardBackgroundColor('white');
-        }
         generateCard();
-    }, [primaryColor, generateCard]);
-
-
+    }, [generateCard, illustrationUrl, title, description, type, price]);
 
 
     const drawTextAndFinalize = (ctx, canvas) => {
@@ -138,6 +112,20 @@ const TitleInput = () => {
         });
     };
 
+    <div className="card-type-overlay">
+        <select value={selectedCardType} onChange={(e) => setSelectedCardType(e.target.value)}>
+            <option value="">Select Card Type</option>
+            <option value="action">Action</option>
+            <option value="reaction">Reaction</option>
+            <option value="treasure">Treasure</option>
+            <option value="victory">Victory</option>
+        </select>
+    </div>
+
+
+
+
+
 
     return (
         <main className="dcgenerator-container">
@@ -178,19 +166,7 @@ const TitleInput = () => {
                     onChange={(e) => setPrice(e.target.value)}
                 />
 
-                <h3 className="primary-color-title">Primary Color</h3>
-                <select
-                    className="primary-color-input"
-                    value={primaryColor}
-                    onChange={(e) => setPrimaryColor(e.target.value)}
-                >
-                    <option value="">Select a primary color</option>
-                    {primaryColorOptions.map((option) => (
-                        <option key={option} value={option}>
-                            {option}
-                        </option>
-                    ))}
-                </select>
+
 
                 <h3 className="illustration-title">URL of Illustration</h3>
                 <div className="illustration-input-container">
@@ -220,10 +196,7 @@ const TitleInput = () => {
                 </button>
             </div>
             <div className="preview-section">
-                <div
-                    className="card-image-container"
-                    style={{ backgroundColor: cardBackgroundColor }}
-                >
+                <div className="card-image-container">
                     <img
                         src={`${process.env.PUBLIC_URL}/Cardimages/Portrait.png`}
                         alt="Card"
@@ -255,9 +228,6 @@ const TitleInput = () => {
                             <img src={`${process.env.PUBLIC_URL}/Cardimages/coin.png`} alt="Coin" className="coin-image" />
                             <span className="price-text">{price}</span>
                         </div>
-                    )}
-                    {primaryColor && (
-                        <div className="card-primary-color-overlay">{primaryColor}</div>
                     )}
                 </div>
             </div>
